@@ -1,0 +1,515 @@
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    /* Background color of your choice, here is light gray #F8F8F8 */
+    background-color: #F8F8F8;
+    color: #333;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
+a {
+    color: #007bff; /* Default link color */
+    text-decoration: none; /* Removes underline from links */
+}
+
+a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+/* Utilities */
+.section-padding {
+    padding: 80px 5%; /* Top/bottom and side padding for each section */
+    max-width: 1200px; /* Maximum content width */
+    margin: 0 auto; /* Centers the content */
+}
+
+/* Header (Navbar) */
+.main-header {
+    background-color: #ffffff;
+    padding: 20px 5%;
+    display: flex; /* Uses Flexbox for layout */
+    justify-content: space-between; /* Separates the logo and navigation */
+    align-items: center; /* Vertically centers items */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    position: sticky; /* Makes the navbar sticky at the top */
+    top: 0;
+    z-index: 1000; /* Ensures the navbar is on top of other elements */
+}
+
+.main-header .logo a {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #333;
+}
+
+.main-nav ul {
+    list-style: none; /* Removes bullet points */
+    display: flex; /* Makes the menu horizontal */
+    gap: 30px; /* Spacing between menu items */
+}
+
+.main-nav ul li a {
+    color: #555;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.main-nav ul li a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Hero Section (Profile Photo on the left, description on the right) */
+#hero {
+    display: flex; /* Uses Flexbox */
+    align-items: center; /* Vertically centers items */
+    justify-content: center; /* Centers the hero content */
+    padding: 100px 5%; /* Padding for the hero section */
+    gap: 50px; /* Space between the image and content */
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    text-align: center; /* Default text-align for mobile */
+}
+
+.hero-image-wrapper {
+    flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.profile-pic {
+    width: 300px; /* Desired width */
+    height: 300px; /* Height should be equal to width for a perfect circle */
+    object-fit: cover; /* Ensures the image fills the area without distortion */
+    border-radius: 50%; /* This makes the image a circle! */
+    display: block;
+    border: 5px solid #007bff; /* Blue border to make it stand out */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+}
+
+.hero-content {
+    flex-grow: 1; /* Content will fill the remaining space */
+    max-width: 600px; /* Limits text width to prevent it from being too long */
+    text-align: left; /* Default text alignment to the left for desktop */
+}
+
+#hero h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+#hero .subtitle {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Slight lift effect on hover */
+    text-decoration: none;
+}
+
+/* General Sections */
+h2 {
+    font-size: 2.5em;
+    color: #222;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 1.8em;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.project-link {
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Experience Section */
+/* Styling untuk bagian pengalaman secara umum */
+.experience-item,
+.experience-bpmf,
+.experience-gki {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.experience-item h3,
+.experience-bpmf h3,
+.experience-gki h3 {
+    font-size: 1.5em;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.experience-item p,
+.experience-bpmf p,
+.experience-gki p {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.experience-item ul,
+.experience-bpmf ul,
+.experience-gki ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: #555;
+}
+
+.experience-item ul li,
+.experience-bpmf ul li,
+.experience-gki ul li {
+    margin-bottom: 5px;
+}
+
+
+/* Styling untuk Gambar dalam Experience */
+/* Styling untuk gambar dalam Experience */
+.experience-images {
+    display: grid;
+    /* Ubah ini untuk memastikan lebar kolom seragam */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.experience-images figure {
+    margin: 0;
+    text-align: center;
+}
+
+.experience-images img {
+    width: 100%; /* Gambar akan mengisi 100% lebar kolomnya */
+    height: auto; /* Mempertahankan rasio aspek gambar */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto 8px auto;
+}
+
+.experience-images figcaption {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Media query untuk tampilan mobile */
+@media (max-width: 768px) {
+    .experience-images {
+        /* Kembali ke 1 kolom agar gambar menumpuk di layar kecil */
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Efek Hover untuk Gambar */
+.experience-images figure:hover img {
+    transform: scale(1.05); /* Memperbesar gambar 5% dari ukuran aslinya */
+    transition: transform 0.3s ease-in-out; /* Menambahkan transisi halus selama 0.3 detik */
+}
+
+/* Mengatur transisi awal pada gambar agar tidak ada "lonjakan" saat tidak disentuh */
+.experience-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto 8px auto;
+    transition: transform 0.3s ease-in-out; /* Tambahkan transisi di sini juga */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #f8f8f8;
+    text-align: center;
+    padding: 30px 5%;
+    font-size: 0.9em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* Navbar becomes vertical */
+        padding: 15px 5%;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Menu becomes vertical */
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    #hero {
+        flex-direction: column; /* Stacks the image and text */
+        text-align: center; /* Centers the hero text */
+        padding: 80px 5%;
+        gap: 30px;
+    }
+
+    .hero-content {
+        text-align: center; /* Centers the hero text */
+    }
+
+    #hero h1 {
+        font-size: 2.5em;
+    }
+
+    #hero .subtitle {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
+    .section-padding {
+        padding: 60px 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 2em;
+    }
+
+    #hero .subtitle {
+        font-size: 1em;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+}
+
+/* Add this to your main.css */
+
+.university-images {
+    display: flex; /* This is the key! It makes all children flex items. */
+    justify-content: center; /* Centers the images horizontally. */
+    align-items: center; /* Aligns them vertically. */
+    gap: 30px; /* Adds space between the images. */
+    flex-wrap: wrap; /* Allows the images to wrap to the next line on smaller screens. */
+}
+
+/* Adjust the image sizing */
+.univ, .univs {
+    margin: 10px;
+    padding-top: 15px;
+    width: 45%; /* Make each image take up about half the container's width. */
+    height: auto; /* Maintains the image's aspect ratio. */
+    border-radius: 10px; /* Optional: adds a rounded corner. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a soft shadow. */
+    transition: transform 0.3s ease; /* Membuat transisi membesar menjadi halus */
+    cursor: pointer;
+}
+.univ:hover, .univs:hover {
+    transform: scale(1.05); /* Memperbesar gambar menjadi 105% dari ukuran aslinya */
+}
+
+/* Contact Section */
+.contact-button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Menambahkan jarak di bawah tombol */
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal Overlay (latar belakang gelap) */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s;
+}
+
+/* Konten di dalam Modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.4s ease-out;
+}
+
+/* Tombol Tutup */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Styling Formulir di dalam Modal */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content input,
+.modal-content textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Styling Ikon Kontak */
+#contact p {
+    margin-bottom: 25px; /* Memberikan jarak di bawah paragraf */
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center; /* Memposisikan ikon di tengah */
+    gap: 25px; /* Jarak antar ikon */
+    margin-top: 20px;
+}
+
+.contact-icons a {
+    color: #007bff; /* Warna ikon */
+    font-size: 2.5em; /* Ukuran ikon yang lebih besar */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-icons a:hover {
+    color: #0056b3; /* Warna saat di-hover */
+    transform: translateY(-5px); /* Efek sedikit naik saat di-hover */
+}
+
+/* Animasi untuk modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
